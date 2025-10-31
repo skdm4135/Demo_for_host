@@ -47,7 +47,7 @@ public class WeatherApp {
 			logger.info("==== RESPONSE COMING FROM THIRD PARTY URL ::::: "  +  response.getBody());
 			
 			
-			finalResponse.put("Resposne", response.getBody());
+			finalResponse.put("Resposne", new JSONObject(response.getBody()));
 			finalResponse.put("StatusCode", response.getStatusCode());
 			
 		}catch(Exception e) {
