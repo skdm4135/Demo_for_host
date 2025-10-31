@@ -1,4 +1,4 @@
-package DemoApi;
+package LEARNING.TO.HOST.GIT.DemoApi;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
