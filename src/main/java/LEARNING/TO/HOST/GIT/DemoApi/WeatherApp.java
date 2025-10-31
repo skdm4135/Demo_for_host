@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -21,7 +22,7 @@ public class WeatherApp {
 	private static final Logger logger = LoggerFactory.getLogger(WeatherApp.class);
 	
 	@GetMapping("/getWeather")
-	public Map<String,Object> getWeatherDetails(){
+	public Map<String,Object> getWeatherDetails(@RequestParam("city") String city){
 		
 		
 		logger.info("====== ENTERED INTO WEATHER API ======");
@@ -30,7 +31,7 @@ public class WeatherApp {
 		
 		String url = UriComponentsBuilder.fromHttpUrl(baseUrl)
                               .queryParam("key","ba001fdbe8fd4416842192617253110")
-                              .queryParam("q","Hyderabad")
+                              .queryParam("q",city)
                               .toUriString();
 		
 		logger.info("==== weather url ::::: " + url);
