@@ -40,8 +40,8 @@ public class WeatherApp {
 		
 		try {
 			
-			ResponseEntity<String> response = restTemplate.exchange
-					(url,HttpMethod.GET,null,String.class);
+			ResponseEntity<WeatherApiDto> response = restTemplate.exchange
+					(url,HttpMethod.GET,null,WeatherApiDto.class);
 			
 			logger.info("=== STATUS CODE FROM WEATHER API ::::::::::: " + response.getStatusCode());
 			
