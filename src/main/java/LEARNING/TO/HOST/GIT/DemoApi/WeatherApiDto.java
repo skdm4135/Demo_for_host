@@ -85,7 +85,13 @@ public class WeatherApiDto {
         @JsonProperty("wind_kph")
         private double windKph;
 
-        @JsonProperty("wind_dir")
+        @Override
+		public String toString() {
+			return "CurrentWeatherDto [lastUpdated=" + lastUpdated + ", tempC=" + tempC + ", feelslikeC=" + feelslikeC
+					+ ", isDay=" + isDay + ", condition=" + condition + ", windKph=" + windKph + ", windDir=" + windDir
+					+ ", humidity=" + humidity + "]";
+		}
+		@JsonProperty("wind_dir")
         private String windDir;
 
         private int humidity;
