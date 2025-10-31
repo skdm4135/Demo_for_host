@@ -30,7 +30,7 @@ public class WeatherApp {
 		
 		String url = UriComponentsBuilder.fromHttpUrl(baseUrl)
                               .queryParam("key","ba001fdbe8fd4416842192617253110")
-                              .queryParam("city","Hyderabad")
+                              .queryParam("q","Hyderabad")
                               .toUriString();
 		
 		logger.info("==== weather url ::::: " + url);
