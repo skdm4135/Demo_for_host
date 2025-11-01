@@ -21,6 +21,11 @@ public class WeatherApp {
 	
 	private static final Logger logger = LoggerFactory.getLogger(WeatherApp.class);
 	
+	@GetMapping("/ping")
+	public ResponseEntity<String> ping(){
+		return ResponseEntity.ok("SUCCESS");
+	}
+	
 	@GetMapping("/getWeather")
 	public Map<String,Object> getWeatherDetails(@RequestParam("city") String city){
 		
